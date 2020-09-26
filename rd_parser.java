@@ -9,15 +9,8 @@ public class rd_parser {
 		return (char) isr.read();
 	}
 	static void match(char token) throws IOException{
-		if(token == '\r'){
-			return ;
-		}
 		if(LA == token){
 			LA = nexttoken();
-			if(LA == '\r'){
-				LA = nexttoken();
-			}
-
 		}else{
 			error(token);
 		}
